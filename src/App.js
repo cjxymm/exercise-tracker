@@ -1,23 +1,50 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import RepetitionExercise from "./components/RepetitionExercise";
+import DurationExercise from "./components/DurationExercise";
 
 function App() {
+  const [selectedExercise, setSelectedExercise] = useState(null);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ padding: "20px", textAlign: "center" }}>
+      {!selectedExercise && (
+        <>
+          <h1>Exercises</h1>
+
+          <button onClick={() => setSelectedExercise({ name: "Push Ups", type: "repetition" })}>
+            Push Ups
+          </button>
+          <br /><br />
+
+          <button onClick={() => setSelectedExercise({ name: "Running", type: "duration" })}>
+            Running
+          </button>
+          <br /><br />
+
+          <button onClick={() => setSelectedExercise({ name: "Plank", type: "duration" })}>
+            Plank
+          </button>
+        </>
+      )}
+
+      {selectedExercise && (
+        <>
+          <button
+            onClick={() => setSelectedExercise(null)}
+            style={{ marginBottom: "20px" }}
+          >
+            ← Back
+          </button>
+
+          {selectedExercise.type === "repetition" && (
+            <RepetitionExercise name={selectedExercise.name} />
+          )}
+
+          {selectedExercise.type === "duration" && (
+            <DurationExercise name={selectedExercise.name} />
+          )}
+        </>
+      )}
     </div>
   );
 }
