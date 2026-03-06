@@ -22,7 +22,7 @@ function RunningExercise({ name }) {
     const mins = Math.floor(seconds / 60);
     const secs = seconds % 60;
 
-    return `${String(mins).padStart(2,"0")}:${String(secs).padStart(2,"0")}`;
+    return `${String(mins).padStart(2, "0")}:${String(secs).padStart(2, "0")}`;
   };
 
   const recordLap = () => {
@@ -33,24 +33,43 @@ function RunningExercise({ name }) {
     <div>
       <h1>{name}</h1>
 
-      <h2>{formatTime()}</h2>
+      <h2 className="timer-display">{formatTime()}</h2>
 
-      <button onClick={() => setRunning(true)}>Start</button>
-      <button onClick={() => setRunning(false)}>Stop</button>
+      <button
+        className="control-button"
+        onClick={() => setRunning(true)}
+      >
+        Start
+      </button>
 
-      <button onClick={() => {
-        setRunning(false);
-        setSeconds(0);
-        setLaps([]);
-      }}>
+      <button
+        className="control-button"
+        onClick={() => setRunning(false)}
+      >
+        Stop
+      </button>
+
+      <button
+        className="control-button"
+        onClick={() => {
+          setRunning(false);
+          setSeconds(0);
+          setLaps([]);
+        }}
+      >
         Reset
       </button>
 
-      <button onClick={recordLap}>Record Lap</button>
+      <button
+        className="control-button"
+        onClick={recordLap}
+      >
+        Record Lap
+      </button>
 
       <h3>Laps</h3>
 
-      <ul>
+      <ul className="lap-list">
         {laps.map((lap, index) => (
           <li key={index}>
             Lap {index + 1}: {lap}

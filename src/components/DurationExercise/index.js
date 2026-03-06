@@ -26,20 +26,30 @@ function DurationExercise({ name }) {
   return (
     <div>
       <h1>{name}</h1>
-      <h2>{formatTime()}</h2>
 
-      <button onClick={() => setRunning(true)}>
+      <h2 className="timer-display">{formatTime()}</h2>
+
+      <button
+        className="control-button"
+        onClick={() => setRunning(true)}
+      >
         Start
       </button>
 
-      <button onClick={() => setRunning(false)}>
+      <button
+        className="control-button"
+        onClick={() => setRunning(false)}
+      >
         Stop
       </button>
 
-      <button onClick={() => {
-        setRunning(false);
-        setSeconds(0);
-      }}>
+      <button
+        className="control-button"
+        onClick={() => {
+          setRunning(false);
+          setSeconds(0);
+        }}
+      >
         Reset
       </button>
     </div>

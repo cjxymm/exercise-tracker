@@ -1,4 +1,3 @@
-/* General page styling */
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
@@ -6,19 +5,16 @@ body {
   color: white;
 }
 
-/* Main container */
 .app-container {
   text-align: center;
   padding: 40px;
 }
 
-/* Title */
 h1 {
   margin-bottom: 25px;
   font-size: 2.2rem;
 }
 
-/* Exercise buttons */
 .exercise-button {
   background-color: #22c55e;
   border: none;
@@ -36,14 +32,12 @@ h1 {
   transform: scale(1.05);
 }
 
-/* Timer / counter display */
 .timer-display {
   font-size: 48px;
   margin: 20px 0;
   font-weight: bold;
 }
 
-/* Control buttons */
 .control-button {
   background-color: #3b82f6;
   border: none;
@@ -60,7 +54,6 @@ h1 {
   background-color: #2563eb;
 }
 
-/* Back button */
 .back-button {
   background-color: #ef4444;
   border: none;
@@ -75,7 +68,6 @@ h1 {
   background-color: #dc2626;
 }
 
-/* Lap list */
 .lap-list {
   margin-top: 25px;
   list-style: none;
