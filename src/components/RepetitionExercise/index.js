@@ -6,15 +6,20 @@ function RepetitionExercise({ name }) {
   return (
     <div>
       <h1>{name}</h1>
-      <h2>{count} reps</h2>
 
-      <button onClick={() => setCount(count + 1)}>
-        + Add Rep
+      <h2 className="timer-display">{count}</h2>
+
+      <button
+        className="control-button"
+        onClick={() => setCount(count + 1)}
+      >
+        Add Rep
       </button>
 
-      <br /><br />
-
-      <button onClick={() => setCount(0)}>
+      <button
+        className="control-button"
+        onClick={() => setCount(0)}
+      >
         Reset
       </button>
     </div>

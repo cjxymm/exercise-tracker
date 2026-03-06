@@ -2,27 +2,39 @@ import { useState } from "react";
 import RepetitionExercise from "./components/RepetitionExercise";
 import DurationExercise from "./components/DurationExercise";
 import RunningExercise from "./components/RunningExercise";
+import "./App.css";
 
 function App() {
   const [selectedExercise, setSelectedExercise] = useState(null);
 
   return (
-    <div style={{ padding: "20px", textAlign: "center" }}>
+    <div className="app-container">
       {!selectedExercise && (
         <>
           <h1>Exercises</h1>
 
-          <button onClick={() => setSelectedExercise({ name: "Push Ups", type: "repetition" })}>
+          <button
+            className="exercise-button"
+            onClick={() => setSelectedExercise({ name: "Push Ups", type: "repetition" })}
+          >
             Push Ups
           </button>
+
           <br /><br />
 
-          <button onClick={() => setSelectedExercise({ name: "Running", type: "running" })}>
+          <button
+            className="exercise-button"
+            onClick={() => setSelectedExercise({ name: "Running", type: "running" })}
+          >
             Running
           </button>
+
           <br /><br />
 
-          <button onClick={() => setSelectedExercise({ name: "Plank", type: "duration" })}>
+          <button
+            className="exercise-button"
+            onClick={() => setSelectedExercise({ name: "Plank", type: "duration" })}
+          >
             Plank
           </button>
         </>
@@ -31,12 +43,12 @@ function App() {
       {selectedExercise && (
         <>
           <button
+            className="back-button"
             onClick={() => setSelectedExercise(null)}
-            style={{ marginBottom: "20px" }}
           >
             ← Back
           </button>
-          
+
           {selectedExercise?.type === "running" && (
             <RunningExercise name={selectedExercise.name} />
           )}
